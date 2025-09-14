@@ -1,7 +1,9 @@
+import {useDispatch, useSelector} from 'react-redux';
 import {Counter} from './component/Counter.jsx';
 import {Stats} from './component/Stats.jsx';
-import {useDispatch, useSelector} from 'react-redux';
 import {decrement, increment} from './features/counters/countersSlice.js';
+import {Posts} from './component/posts.jsx';
+
 
 export const App = () => {
   const counters = useSelector(state => state.counters)
@@ -19,14 +21,16 @@ export const App = () => {
       <div className='max-w-md mx-auto mt-10 space-y-5'>
         {
           counters.map(counter =>
-            <Counter
+          <Counter
             count={counter.value}
-            key={counter.id}
+          key={counter.id}
             onIncrement={() => handleIncrement(counter.id)}
             onDecrement={() => handleDecrement(counter.id)}
-          />)
+          />
+          )
         }
-        <Stats totalCount={totalCount} />
+        <Stats totalCount={totalCount}/>
+        <Posts />
       </div>
     </div>
   )

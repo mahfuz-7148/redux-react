@@ -1,4 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
+
 const initialState = [
   {
     id: 1,
@@ -6,6 +7,10 @@ const initialState = [
   },
   {
     id: 2,
+    value: 0
+  },
+  {
+    id: 3,
     value: 0
   }
 ]
